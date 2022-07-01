@@ -230,7 +230,7 @@ cd scadnano
 ```
 
 Changes to scadnano should be pushed to the
-[`dev`](https://github.com/UC-Davis-molecular-computing/scadnano/tree/dev)
+[dev](https://github.com/UC-Davis-molecular-computing/scadnano/tree/dev)
 branch. (This step is unnecessary if you simply wish to run scadnano locally.) So switch to the `dev` branch:
 
 ```
@@ -241,67 +241,66 @@ git checkout dev
 
 This project requires using Dart version **2.13.4**, not the latest version. Click on a dropdown below for installation instructions for your operating system.
 
-<!--TODO: Find a way to use code blocks with syntax highlighting inside <details>-->
 
-<details><summary><strong>Windows</strong></summary>
-First, install <a href="https://chocolatey.org/install">Chocolatey</a> if you haven't already. If <code>choco help</code> shows a help menu for using Chocolatey, then you've set it up correctly.
+**Windows**
+First, install [Chocolatey](https://chocolatey.org/install) if you haven't already. If ```choco help``` shows a help menu for using Chocolatey, then you've set it up correctly.
 
 Then, install Dart 2.13.4:
 
-<pre>
+```
 choco install dart-sdk --version 2.13.4
-</pre>
+```
 
 To stop Chocolatey from automatically updating Dart to the latest version, pin it:
 
-<pre>
+```
 choco pin --name="'dart-sdk'" --version="'2.13.4'"
-</pre>
+```
 
-</details>
 
-<details><summary><strong>macOS</strong></summary>
-First, install <a href="https://brew.sh/">Homebrew</a> if you haven't already. If <code>brew -v</code> shows some version numbers, then you've set it up correctly.
+
+**macOS**
+First, install [Homebrew](https://brew.sh/) if you haven't already. If ```brew -v``` shows some version numbers, then you've set it up correctly.
 
 Then, install Dart 2.13.4:
 
-<pre>
+```
 brew install dart@2.13.4
-</pre>
+```
 
 To stop Homebrew from automatically updating Dart to the latest version, pin it:
 
-<pre>
+```
 brew pin dart@2.13.4
-</pre>
+```
 
-If running `dart` in a terminal now does not work, you may need to follow <a href="https://docs.brew.sh/FAQ#my-mac-apps-dont-find-homebrew-utilities">these instructions</a>.
-</details>
+If running `dart` in a terminal now does not work, you may need to follow [these instructions](https://docs.brew.sh/FAQ#my-mac-apps-dont-find-homebrew-utilities).
 
-<details><summary><strong>Linux (apt)</strong></summary>
+
+**Linux (apt)**
 First, run these commands:
 
-<pre>
+```
 sudo apt-get update
 sudo apt-get install apt-transport-https
 wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/dart.gpg
 echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list
-</pre>
+```
 
 Then, install Dart 2.13.4:
 
-<pre>
+```
 sudo apt-get update
 sudo apt-get install dart=2.13.4-1
-</pre>
+```
 
 To stop apt from automatically updating Dart to the latest version, hold it:
 
-<pre>
+```
 sudo apt-mark hold dart=2.13.4-1
-</pre>
+```
 
-</details>
+
 
 <!--TODO: Add instructions for more package managers-->
 
@@ -310,9 +309,7 @@ After installing the Dart SDK, you should see a help menu when you run `dart`.
 Once you have installed Dart, install all the Dart dependencies (from the same directory `scadnano` into which the project was cloned by git):
 
 ```
-
 pub get
-
 ```
 
 ### Running a Local Server
@@ -323,9 +320,7 @@ be installed by following instructions [here](https://dart.dev/tools/webdev#setu
 Run
 
 ```
-
 webdev serve
-
 ```
 
 in the `scadnano` directory to compile your code
@@ -337,9 +332,7 @@ However, in scadnano, it doesn't appear to make a big difference whether develop
 The webdev program will tell you which URL to enter in your browser; it will be something like
 
 ```
-
 [INFO] Serving `web` on http://127.0.0.1:8080
-
 ```
 
 Sometimes you may see an unexpected compilation error even if you haven't changed the code from a state where it was compiling okay. If you've really tried to fix an error and it doesn't seem to be due to a mistake in the code, then as a last resort, try running `./clean.sh`. This will clear out cached files and `.g.dart` files, which can sometimes become stale and need to be regenerated. If you run `./clean.sh`, and the project still does not compile, then it is a genuine syntax error that needs to be fixed.
@@ -389,9 +382,7 @@ compiler `dart2js` for profiling purposes or debugging some
 production-specific bug. You can tell `webdev` to compile with
 the `dart2js` compiler by adding the `--release` flag:
 ```
-
 webdev serve --release
-
 ````
 
 ### Troubleshooting
